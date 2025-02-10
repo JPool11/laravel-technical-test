@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('payment_method_options', function (Blueprint $table) {
             $table->id();
+            $table->string('key', 50)->required();
+            $table->string('value', 100)->required();
+            $table->foreignId('payment_method_id')->constrained('payment_methods')->onDelete('cascade');
             $table->timestamps();
         });
     }

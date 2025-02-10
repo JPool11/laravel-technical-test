@@ -9,4 +9,8 @@ class PaymentMethodOption extends Model
 {
     /** @use HasFactory<\Database\Factories\PaymentMethodOptionFactory> */
     use HasFactory;
+
+    public function PaymentMethod(){
+        return $this->hasMany(PaymentMethod::class);
+    }
 }

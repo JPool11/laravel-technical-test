@@ -5,6 +5,11 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use Database\Factories\PaymentMethodFactory;
+
+use App\Models\PaymentMethod;
+
+
 class PaymentMethodSeeder extends Seeder
 {
     /**
@@ -12,6 +17,6 @@ class PaymentMethodSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        PaymentMethod::factory(10)->create();
     }
 }

@@ -4,11 +4,15 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use App\Models\PaymentMethod;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PaymentMethod>
  */
 class PaymentMethodFactory extends Factory
 {
+    protected $model = PaymentMethod::class;
+    
     /**
      * Define the model's default state.
      *
@@ -17,10 +21,8 @@ class PaymentMethodFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => fake()->name(),
             'description' => $this->faker->sentence(),
-            'created_at' => $this->faker->dateTime(),
-            'updated_at' => $this->faker->dateTime(),
         ];
     }
 }

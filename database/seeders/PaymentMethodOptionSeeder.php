@@ -15,8 +15,10 @@ class PaymentMethodOptionSeeder extends Seeder
      */
     public function run(): void
     {
-        PaymentMethodOption::factory()
-        ->has(PaymentMethod::factory(5))
-        ->create();
+        PaymentMethod::all()->each(function ($paymentMethod) {
+            PaymentMethodOption::factory()
+                ->count(rand(1, 5))
+                ->create(['payment_method_id' => $paymentMethod->id]);
+        });
     }
 }

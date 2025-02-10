@@ -17,7 +17,11 @@ class PaymentMethodOptionFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'payment_method_id' => $this->faker->numberBetween(1, 10),
+            'key' => $this->faker->word(),
+            'value' => $this->faker->word(),
+            'created_at' => $this->faker->dateTime(),
+            'updated_at' => $this->faker->dateTime(),
         ];
     }
 }
